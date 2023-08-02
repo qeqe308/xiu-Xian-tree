@@ -659,6 +659,7 @@ function loadVue() {
 			ctrlDown,
 			run,
 			gridRun,
+			wupin,
 		},
 	})
 }

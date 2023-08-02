@@ -40,7 +40,7 @@ td {
 	align-items: center;
 	max-width: 100%;
 	margin: 0 auto;
-	transition-duration:1s
+	transition-duration: 1s
 }
 
 .upgAlign {
@@ -134,7 +134,7 @@ td {
 }
 
 .fast {
-	transition:color none
+	transition: color none
 }
 
 .col.right {
@@ -167,18 +167,18 @@ ul {
 	transition-duration: 0s
 }
 
-.tooltipBox { 
+.tooltipBox {
 	position: relative;
-  }
-  
-  .tooltipBox:hover .tooltip{
-	opacity: 1;
-  }
+}
 
-  .forceTooltip .tooltip{
+.tooltipBox:hover .tooltip {
 	opacity: 1;
-  }
-  
+}
+
+.forceTooltip .tooltip {
+	opacity: 1;
+}
+
 .respecCheckbox {
 	display: inline-block;
 }
@@ -191,8 +191,8 @@ ul {
 }
 
 .treeOverlay {
-	pointer-events:none;
-	overflow:hidden;
+	pointer-events: none;
+	overflow: hidden;
 }
 
 .front {
@@ -201,12 +201,12 @@ ul {
 
 .overlayThing {
 	z-index: 10000;
-	pointer-events:auto;
+	pointer-events: auto;
 }
 
 .sideLayers {
 	z-index: 10000;
-	pointer-events:auto;
+	pointer-events: auto;
 	position: absolute;
 	right: 55px;
 	top: 65px;
@@ -214,7 +214,7 @@ ul {
 }
 
 button > * {
-	pointer-events:none;
+	pointer-events: none;
 }
 
 .ghost {
@@ -248,6 +248,6 @@ button > * {
 	--background: transparent !important;
 }
 
-.kuanduyibai{
+.kuanduyibai {
 	width: 100%;
 }

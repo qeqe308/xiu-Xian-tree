@@ -74,7 +74,7 @@ addLayer('qitaxinxi', {
                         <br>
                         作者： ${modInfo.author}	
                     </span>
-
+                    <div>文本作者:qaqe308</div>
                     <span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink" target="_blank">${modInfo.discordName}</a><br></span>
                     <br><br>
                     已游玩时间: ${formatTime(player.timePlayed)}<br><br>

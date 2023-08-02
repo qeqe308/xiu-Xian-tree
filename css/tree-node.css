@@ -38,7 +38,7 @@
 }
 
 .treeNode.can:hover {
-	color:black
+	color: black
 }
 
 .notify {
@@ -46,7 +46,6 @@
 	border-color: rgba(0, 0, 0, 0.125);
 	box-shadow: var(--hqProperty2a), 0 0 20px #ff0000;
 }
-
 
 
 .mark {
@@ -62,7 +61,7 @@
 	border-bottom: 0.7em solid transparent;
 	border-left: 0.3em solid transparent;
 	font-size: 10px;
-	overflow:auto;
+	overflow: auto;
 	pointer-events: none;
 }
 
@@ -100,24 +99,35 @@
 	transform: rotate(35deg);
 }
 
-.zhankai{
+.zhankai {
 	-webkit-clip-path: inset(0 0 0 0)
 }
-.jieshu{
+
+.jieshu {
 
 	-webkit-clip-path: inset(0 100% 0 0);
 }
-.addd{
-	color:black
+
+.addd {
+	color: black
 }
-.accc{
-	color:black
+
+.accc {
+	color: black
 }
-.zuo{
+
+.zuo {
 	text-align: left;
 }
-.jiantou{
+
+.jiantou {
 	display: inline-block;
-	--deg:0deg;
+	--deg: 0deg;
 	transform: rotate(var(--deg));
+}
+
+.linggen {
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	background-image: linear-gradient(to right, red, yellow, green, #0051ff, #6c2e2e)
 }
