@@ -211,10 +211,10 @@ function setupLayer(layer){
 function addLayer(layerName, layerData, tabLayers = null){ // Call this to add layers from a different file!
     layers[layerName] = layerData
     layers[layerName].isLayer = true
-    if (tabLayers !== null)
-    {
+    let layer;
+    if (tabLayers !== null) {
         let format = {}
-        for (id in tabLayers) {
+        for (let id in tabLayers) {
             layer = tabLayers[id]
             format[(layers[layer].name ? layers[layer].name : layer)] = {
                 embedLayer: layer,
@@ -224,10 +224,12 @@ function addLayer(layerName, layerData, tabLayers = null){ // Call this to add l
                         style = tmp[this.embedLayer].nodeStyle
                         if (style['border-color'] === undefined) style['border-color'] = tmp[this.embedLayer].color
                         return style
-                    } 
+                    }
                 },
-                unlocked() {return tmp[this.embedLayer].layerShown},
-            }       
+                unlocked() {
+                    return tmp[this.embedLayer].layerShown
+                },
+            }
         }
         layers[layerName].tabFormat = format
     }

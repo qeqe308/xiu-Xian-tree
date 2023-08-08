@@ -1,5 +1,5 @@
 let modInfo = {
-	name: "The ??? Tree",
+	name: "修仙树",
 	id: "qnmerqop",
 	author: "qeqe308",
 	pointsName: "灵气",
@@ -7,14 +7,14 @@ let modInfo = {
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.1",
-	name: "侧边栏的启用",
+	num: "0.2",
+	name: "世界的完善",
 }
 
 let changelog = `<h1>Changelog:</h1><br>

@@ -22,7 +22,7 @@
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
 	font-family: "Lucida Console", "Courier New", monospace;
-	color: rgba(0, 0, 0, 0.5);
+	color: black;
 	text-shadow: var(--hqProperty3);
 	padding: 0;
 }
@@ -109,11 +109,11 @@
 }
 
 .addd {
-	color: black
+	color:black;
 }
 
 .accc {
-	color: black
+	color: #061d81
 }
 
 .zuo {
@@ -130,4 +130,9 @@
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	background-image: linear-gradient(to right, red, yellow, green, #0051ff, #6c2e2e)
+}
+.zizhinakuai{
+	width:33.3%;
+	height:100%;
+	border-style:solid;
 }

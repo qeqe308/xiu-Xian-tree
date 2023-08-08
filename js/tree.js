@@ -24,7 +24,7 @@ addLayer("tree-tab", {
 //wwwwwwwwww
 addLayer('qitaxinxi', {
     symbol: "其他", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    position: 0, // Horizontal position within a rowses the layer id and sorts in alphabetical order
     color: "#ffff",
     startData() {
         return {
@@ -70,12 +70,11 @@ addLayer('qitaxinxi', {
                     <h2>${modInfo.name}</h2>
                     <br>
                     <h3>${VERSION.withName}</h3>
-                    <span v-if="modInfo.author">
+                    <span>
                         <br>
-                        作者： ${modInfo.author}	
+                        作者： ${modInfo.author}和qaqe308
                     </span>
-                    <div>文本作者:qaqe308</div>
-                    <span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink" target="_blank">${modInfo.discordName}</a><br></span>
+                    <span><a class="link" v-bind:href="modInfo.discordLink" target="_blank">${modInfo.discordName}</a><br></span>
                     <br><br>
                     已游玩时间: ${formatTime(player.timePlayed)}<br><br>
                 `
@@ -92,6 +91,11 @@ addLayer('qitaxinxi', {
                     v0.1:<br>
                     1.对于游戏的展现形式进行了变化(借鉴了神秘的一些)<br>
                     2.决定了游戏的基础规则与世界观<br>
+                    3.新增灵根随机系统<br>
+                    v0.2:<br>
+                    1.新增家境随机系统<br>
+                    2.剧情新增'前情提要'<br>
+                    3.新增熟练度<br>
                     </div>
                     `
                 }]

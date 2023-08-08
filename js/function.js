@@ -55,12 +55,24 @@ function rotate(layer, f) {
  */
 function linggenadddd() {
     let a = Math.ceil(Math.random() * 100)
-    let b = 0
     let c = 0
     for (let i of wupin.linggen.gailv) {
-        b += i
-        if (a <= b) {
+        if (a <= i) {
             return wupin.linggen.l[c]
+        }
+        c++
+    }
+}
+/**
+ *
+ * @returns {number} 返回家境
+ */
+function jisjingadddd() {
+    let a = Math.ceil(Math.random() * 100)
+    let c = 0
+    for (let i of wupin.jiajing) {
+        if (a <= i.gailv) {
+            return c
         }
         c++
     }

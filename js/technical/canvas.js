@@ -1,6 +1,12 @@
 var canvas;
 var ctx;
 
+function qaqe308(){
+	player.w.zizhi=[10,10,10,10,10,10]
+	player.w.linggen='毒'
+	player.w.jiajing=3
+}
+
 window.addEventListener("resize", (_=>resizeCanvas()));
 
 function retrieveCanvasData() {

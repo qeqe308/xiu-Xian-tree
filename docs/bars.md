@@ -11,9 +11,7 @@ bars: {
         width: 200,
         height: 50,
         progress() { return 0 },
-        etc
     },
-    etc
 }
 ```
 

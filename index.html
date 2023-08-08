@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-	<title>修仙树</title>
+	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/donghua.css" >
 	<link rel="stylesheet" type="text/css" href="css/system-style.css" />
 	<link rel="stylesheet" type="text/css" href="css/bars.css" />
@@ -14,7 +14,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
 	<script src="js/technical/break_eternity.js"></script>
 	<script src="js/technical/layerSupport.js"></script>
 	<script src="js/function.js"></script>
@@ -69,7 +69,7 @@
 
 		<div v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen)" id="treeTab"  onscroll="resizeCanvas()" 
 			v-bind:class="{ fullWidth: (player.tab === 'none' || player.navTab === 'none'), col: (player.tab !== 'none' && player.navTab !== 'none'), left: (player.tab !== 'none' && player.navTab !== 'none')}"
-			style="width: 19.5%;">
+			style="width:19.5%;">
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
 			<layer-tab :layer="player.navTab === 'none' ? player.tab : player.navTab" :key="'left'"></layer-tab>
 			<bg :layer="player.navTab === 'none' ? player.tab : player.navTab" ></bg>

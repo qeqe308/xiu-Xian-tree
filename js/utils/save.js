@@ -8,9 +8,6 @@ function save(force) {
 }
 function startPlayerBase() {
 	return {
-		suptabs:{
-			
-		},
 		tab: layoutInfo.startTab,
 		navTab: (layoutInfo.showTree ? layoutInfo.startNavTab : "none"),
 		time: Date.now(),
@@ -24,12 +21,22 @@ function startPlayerBase() {
 
 		points: modInfo.initialStartPoints,
 		subtabs: {},
-		lastSafeTab: (readData(layoutInfo.showTree) ? "none" : layoutInfo.startTab)
+		lastSafeTab: (readData(layoutInfo.showTree) ? "none" : layoutInfo.startTab),
+		suptabs:{
+			a: 1,
+e: 1,
+q: 1,
+qitaxinxi: 1,
+s: 1,
+w: 1,
+z: 1,
+		}
 	};
 }
 function getStartPlayer() {
-	playerdata = startPlayerBase();
+	let playerdata = startPlayerBase();
 
+	let extradata;
 	if (addedPlayerData) {
 		extradata = addedPlayerData();
 		for (thing in extradata)
@@ -45,13 +52,13 @@ function getStartPlayer() {
 			playerdata.subtabs[layer].mainTabs = Object.keys(layers[layer].tabFormat)[0];
 		}
 		if (layers[layer].microtabs) {
-			if (playerdata.subtabs[layer] == undefined)
+			if (playerdata.subtabs[layer] === undefined)
 				playerdata.subtabs[layer] = {};
 			for (item in layers[layer].microtabs)
 				playerdata.subtabs[layer][item] = Object.keys(layers[layer].microtabs[item])[0];
 		}
 		if (layers[layer].infoboxes) {
-			if (playerdata.infoboxes[layer] == undefined)
+			if (playerdata.infoboxes[layer] === undefined)
 				playerdata.infoboxes[layer] = {};
 			for (item in layers[layer].infoboxes)
 				playerdata.infoboxes[layer][item] = false;
@@ -78,7 +85,7 @@ function getStartLayerData(layer) {
 
 	layerdata.buyables = getStartBuyables(layer);
 	if (layerdata.noRespecConfirm === undefined) layerdata.noRespecConfirm = false
-	if (layerdata.clickables == undefined)
+	if (layerdata.clickables === undefined)
 		layerdata.clickables = getStartClickables(layer);
 	layerdata.spentOnBuyables = decimalZero;
 	layerdata.upgrades = [];
@@ -231,14 +238,15 @@ function loadOptions() {
 
 function setupModInfo() {
 	modInfo.changelog = changelog;
-	modInfo.winText = winText ? winText : `Congratulations! You have reached the end and beaten this game, but for now...`;
+	modInfo.winText = winText ? winText : `恭喜! 您达到了游戏的终点, 但是这是暂时的...`;
 
 }
 function fixNaNs() {
 	NaNcheck(player);
 }
 function NaNcheck(data) {
-	for (item in data) {
+    //return
+	for (let item in data) {
 		if (data[item] == null) {
 		}
 		else if (Array.isArray(data[item])) {
@@ -248,7 +256,7 @@ function NaNcheck(data) {
 			if (!NaNalert) {
 				clearInterval(interval);
 				NaNalert = true;
-				alert("Invalid value found in player, named '" + item + "'. Please let the creator of this mod know! You can refresh the page, and you will be un-NaNed.")
+				alert("存档中找到了错误数据, 数据名为 '" + item + "'. 请让本树的作者知道! 您可以刷新页面, 本树在刷新后会尽量修复错误.")
 				return
 			}
 		}
@@ -261,7 +269,7 @@ function NaNcheck(data) {
 }
 function exportSave() {
 	//if (NaNalert) return
-	let str = btoa(JSON.stringify(player));
+	let str = btoa(unescape(encodeURIComponent(JSON.stringify(player))));
 
 	const el = document.createElement("textarea");
 	el.value = str;
@@ -273,10 +281,10 @@ function exportSave() {
 }
 function importSave(imported = undefined, forced = false) {
 	if (imported === undefined)
-		imported = prompt("Paste your save here");
+		imported = prompt("在这里黏贴你的存档!");
 	try {
 		tempPlr = Object.assign(getStartPlayer(), JSON.parse(atob(imported)));
-		if (tempPlr.versionType != modInfo.id && !forced && !confirm("This save appears to be for a different mod! Are you sure you want to import?")) // Wrong save (use "Forced" to force it to accept.)
+		if (tempPlr.versionType !== modInfo.id && !forced && !confirm("这个存档来自别的树! 你确定要导入吗?")) // Wrong save (use "Forced" to force it to accept.)
 			return;
 		player = tempPlr;
 		player.versionType = modInfo.id;
@@ -286,7 +294,7 @@ function importSave(imported = undefined, forced = false) {
 		save();
 		window.location.reload();
 	} catch (e) {
-		return;
+
 	}
 }
 function versionCheck() {
@@ -298,7 +306,7 @@ function versionCheck() {
 	}
 
 	if (setVersion) {
-		if (player.versionType == modInfo.id && VERSION.num > player.version) {
+		if (player.versionType === modInfo.id && VERSION.num > player.version) {
 			player.keepGoing = false;
 			if (fixOldSave)
 				fixOldSave(player.version);

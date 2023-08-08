@@ -57,8 +57,9 @@ var systemComponents = {
 				resetNotify: tmp[layer].prestigeNotify,
 				can: ((player[layer].unlocked || tmp[layer].canReset) && tmp[layer].isLayer) || (!tmp[layer].isLayer && tmp[layer].canClick),
 				front: !tmp.scrolled,
-				addd:(layers[layer].tabFormat&&!Array.isArray(tmp[layer].tabFormat)&&player.suptabs[layer])||(player.tab==layer&&layers[layer].tabFormat&&Array.isArray(tmp[layer].tabFormat)),
+				addd:(layers[layer].tabFormat&&!Array.isArray(tmp[layer].tabFormat)&&player.suptabs[layer]),
 				zuo:layers[layer].tabFormat&&!Array.isArray(tmp[layer].tabFormat)&&player.qitaxinxi.jiantou==0,
+				accc:(layers[layer].tabFormat&&Array.isArray(tmp[layer].tabFormat)&&player.tab===layer)
 			}"
 						v-bind:style="constructNodeStyle(layer)">
 						<span v-if='layers[layer].tabFormat&&!Array.isArray(tmp[layer].tabFormat)&&player.qitaxinxi.jiantou==1' class='jiantou' :style='rotate(layer,"左")'>→</span>
